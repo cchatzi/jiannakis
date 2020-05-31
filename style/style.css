@@ -192,12 +192,12 @@ body {
   padding-bottom: 2em;
 }
 
-.container main article .image {
+.image {
   width: 140px;
   height: 120px;
   float: right;
 }
-.container main article div .image {
+.image img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
