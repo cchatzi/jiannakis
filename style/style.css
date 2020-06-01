@@ -1,18 +1,18 @@
 /* Background color to separate the two blocks - header and main */
 
 header {
-  background-color: bisque;
+  background-color: rgb(169, 200, 218);
 }
 
 main {
-  background-color: cadetblue;
+  background-color: rgb(191, 225, 226);
 }
 
 /* body */
 body {
   box-sizing: border-box;
-  background-color: #eee;
-  color: #39434f;
+  background-color: rgb(237, 243, 243);
+  color: #0f161f;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 20px;
@@ -49,7 +49,11 @@ body {
 
 .container header h1 {
   line-height: 1em;
-  font-size: 1.8em;
+  font-size: 20px;
+}
+
+.container header p {
+  font-size: 14px;
 }
 
 .container header nav {
@@ -58,14 +62,15 @@ body {
   padding-top: 2em;
 }
 .container header nav a {
-  padding: 1em 0;
+  padding: 0.5em 0;
   width: 100%;
-  background-color: lawngreen;
-  margin: 0.2em 0;
+  background-color: rgb(96, 117, 207);
+  margin-bottom: 0.3em;
   text-decoration: none;
-  color: #000;
+  color: rgb(9, 9, 10);
   font-weight: 700;
   /* display: none; */
+  font-size: 15px;
 }
 
 .container header nav.close {
@@ -150,7 +155,8 @@ body {
 }
 
 .container header nav a:hover {
-  background-color: rgb(59, 100, 18);
+  background-color: rgb(61, 57, 116);
+  color: #fff;
 }
 
 /* main */
@@ -161,46 +167,49 @@ body {
   padding: 3em 2em;
 }
 
-.container main article h1 {
+/* .container main article h1 {
   line-height: 1em;
-}
+} */
 
 .container main article h2 {
   margin: 0;
   padding: 1em 0;
-  text-align: left;
-  font-size: 1.2em;
+  text-align: center;
+  font-size: 1.3em;
   padding-bottom: 3em;
+  line-height: 1.5em;
 }
 
 .container main article h2 span {
   display: block;
+  /* text-align: left; */
 }
 
 .container main article h3 {
   margin: 0;
-  font-size: 1em;
+  font-size: 1.1em;
   padding-bottom: 3em;
 }
 
 .container main article p {
   text-align: justify;
   word-break: break-word;
-  font-size: 1em;
+  font-size: 1.1em;
   max-width: 700px;
   margin: 0 auto;
   padding-bottom: 2em;
 }
 
 .image {
-  width: 140px;
+  width: 120px;
   height: 120px;
   float: right;
+  text-align: right;
 }
 .image img {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 
   padding-left: 0.6em;
 }
@@ -248,6 +257,10 @@ body {
   width: 250px;
   height: 250px;
   margin-right: 0.2em;
+}
+
+footer {
+  background-color: rgb(169, 200, 218);
 }
 
 /* Adding media queries */
@@ -310,4 +323,82 @@ body {
 }
 
 @media only screen and (min-width: 766px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-auto-rows: minmax(100%, auto);
+    position: relative;
+    height: 100vh;
+    max-width: 1170px;
+  }
+
+  #header {
+    grid-column: 1 / 4;
+    grid-row: 1 /9;
+    /* grid-auto-rows: minmax(70%, auto); */
+    border-right: 1px #39434f solid;
+  }
+
+  footer {
+    border-right: 1px #39434f solid;
+  }
+
+  #main h2 {
+    font-size: 2em;
+  }
+
+  #main h3 {
+    font-size: 1.5em;
+  }
+
+  #main article {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  #main .image {
+    width: 160px;
+    height: 160px;
+    float: right;
+    padding-left: 1em;
+  }
+  #main .image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #main .praxis {
+    width: 400px;
+    height: 400px;
+    padding-bottom: 3em;
+  }
+  .container .menu-wrap {
+    display: none !important;
+  }
+
+  .container header nav.close {
+    display: flex;
+  }
+
+  #main {
+    grid-column: 4/13;
+    grid-row: 1/13;
+
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .container footer {
+    grid-column: 1 / 4;
+    grid-row: 9 / 13;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* grid-auto-rows: minmax(30%, auto); */
+  }
+
+  #main h2 {
+    font-size: 1.5em;
+  }
 }
