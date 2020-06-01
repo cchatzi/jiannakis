@@ -79,6 +79,7 @@ body {
 
 .container header nav.open {
   display: flex;
+  margin-top: -100px;
 }
 
 /* Menu Hamnburger button */
